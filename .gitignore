@@ -1,0 +1,38 @@
+@'
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# next.js
+.next/
+out/
+build/
+dist/
+
+# environment
+.env
+.env*.local
+
+# playwright mcp screenshots
+.playwright-mcp/
+test-results/
+playwright-report/
+
+# claude code local settings (keep .claude/skills tracked)
+.claude/settings.local.json
+
+# os
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# logs
+*.log
+npm-debug.log*
+'@ | Out-File -FilePath .gitignore -Encoding utf8
