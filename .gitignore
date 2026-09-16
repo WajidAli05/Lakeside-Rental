@@ -1,4 +1,3 @@
-@'
 # dependencies
 node_modules/
 .pnp
@@ -35,4 +34,3 @@ desktop.ini
 # logs
 *.log
 npm-debug.log*
-'@ | Out-File -FilePath .gitignore -Encoding utf8

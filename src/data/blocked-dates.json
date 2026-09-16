@@ -1,0 +1,30 @@
+{
+  "$comment": "Owner-maintained availability. ONLY record exceptions — any date with no entry here is treated as Available. Set lastUpdated every time you edit this file; the site shows that date to visitors. Status is 'booked' (nothing left) or 'limited' (some inventory left). For 'limited', remainingGuestCapacity is the largest guest count still servable that day.",
+  "lastUpdated": "2026-09-16",
+  "dates": [
+    {
+      "date": "2027-06-12",
+      "status": "booked"
+    },
+    {
+      "date": "2027-06-19",
+      "status": "limited",
+      "remainingGuestCapacity": 80,
+      "note": "One 20x40 high peak still open."
+    },
+    {
+      "date": "2027-07-03",
+      "status": "booked"
+    },
+    {
+      "date": "2027-07-04",
+      "status": "booked"
+    },
+    {
+      "date": "2027-08-21",
+      "status": "limited",
+      "remainingGuestCapacity": 48,
+      "note": "20x20 package only."
+    }
+  ]
+}
