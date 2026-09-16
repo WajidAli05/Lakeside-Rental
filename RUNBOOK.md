@@ -163,19 +163,21 @@ Their recent marketing collateral supplied real brand and product data. Three th
 
 **Wedding management is a real priced product.** Three collections at $395 / $795 / $1,395, all built around custom 3D and 2D layouts. This validates the configurator commercially — they already sell layouts by hand. It also means `/weddings` is a revenue page, not a brochure page.
 
-## 3.1 Confirm the content data
+## 3.1 Content is now locked
 
-Before running anything, spot-check the pricing in V2 against their live site yourself. Their site now blocks automated fetching, so some figures came from earlier reads and cached snippets.
+`LAKESIDE-CURRENT-WEBSITE-INFO.md` in the project root is the canonical source — every package, price, size, inclusion, booking step and wedding collection, transcribed from their live site. No more verification needed; it replaces the earlier cached figures.
 
-**Verify manually:** tent package sizes and prices, table and chair pricing, dance floor sizes, décor line items.
+Detail the flyer omitted: the Essentials Collection also includes a day-of vendor point of contact, ceremony and reception timeline management, and light décor setup. Each tier carries a scope-limiting asterisk on its décor setup — these are contractual and must be reproduced wherever inclusions are listed.
 
-**Confirmed and current:** phone `(517) 294-1640`; 10% military discount; Lake Chemung half-mile discount; full payment due within two weeks to hold a date; tents delivered 1–2 days prior, collected the day after; tables and chairs delivered stacked unless setup is bought; wedding tiers as above.
+Two constraints that affect the build directly:
+- **Dance floor finishes vary by size.** 20x20 has no black; 24x24 and 28x28 are checkered only. The selector must disable unavailable combinations.
+- **Booking Step 1's field list is the quote form schema.** Don't add or drop fields.
 
-> **Warning:** several similarly-named companies exist — Lakeside Party Rentals in Port Huron and Clinton Township MI, one in Indiana, one in San Diego. Do not let any of their data enter the project. Only `lakeside-party-rental.com` and the Howell Facebook page are valid sources.
+> **Warning:** several similarly-named companies exist — Lakeside Party Rentals in Port Huron and Clinton Township MI, one in Indiana, one in San Diego. Only `lakeside-party-rental.com` and the Howell Facebook page are valid sources.
 
 ## 3.2 Run the foundation prompt
 
-Fresh Claude Code session. Paste **Part 3 of `lakeside-orchestration-prompt-v3.md`** — from "WHO YOU ARE" through "BEGIN".
+Fresh Claude Code session. Paste all of **`STAGE3-PROMPT.md`** below its header line. This supersedes Part 3 of the V3 document — it carries the palette and the pointer to the canonical content file, which V3 did not.
 
 Attach the four marketing images from `assets/reference/` — the wedding management flyer, the Memorial Day post, the delivery special, and the website launch post. They are the brand reference.
 
@@ -184,7 +186,7 @@ Attach the four marketing images from `assets/reference/` — the wedding manage
 Highest-leverage review in the project. These govern every later session, including after compaction.
 
 - `lakeside-design-system` — navy-primary palette correct; gold reserved for premium/wedding; anti-neon rule present; pricing and forms on light backgrounds
-- `lakeside-content` — every price correct; **wedding collections present with the "Starting at" phrasing and the scope footnote**; military and Lake Chemung discounts; payment terms
+- `lakeside-content` — **points at `LAKESIDE-CURRENT-WEBSITE-INFO.md` rather than restating prices**; enforces the single typed config; dance-floor finish constraints; "Starting at" phrasing and scope footnote; banned phrases
 - `aceternity-animate-ui` — do-not-use list present
 - `gsap-motion` — sourced from `/greensock/gsap-skills` via Context7, `matchMedia` and reduced-motion rules present
 - `r3f-3d-scene` — instancing, draco, lazy-load, mobile fallback
